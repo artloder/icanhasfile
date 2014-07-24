@@ -10,7 +10,8 @@ USAGE:
      icanhasfile --version
 
 DESCRIPTION:
-     icanhasfile helps you locate and operate on files using glob searches.
+     icanhasfile helps you locate and operate on files using command-line
+     glob searches.
 
 OPTIONS:
      --help, -h, -?

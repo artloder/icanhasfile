@@ -15,7 +15,7 @@ To install icanhasfile, simply:
 
 .. code-block:: bash
 
- $ pip install icanhasfile
+ $ pip install --pre icanhasfile
 
 usage
 -----
