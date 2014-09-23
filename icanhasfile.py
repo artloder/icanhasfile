@@ -75,9 +75,12 @@ def get_matches(base_path, filepattern, ignore_case, exclude_dirs):
     """Return a list of file Strings that match the criteria."""
     matches = []
     for (path, dirs, files) in scandir.walk(base_path):
+        dirs_to_remove = []
         for dir in dirs:
             if dir in exclude_dirs:
-                dirs.remove(dir)
+                dirs_to_remove.append(dir)
+        for dir in dirs_to_remove:
+            dirs.remove(dir)
         for file in files:
             if is_match(file, filepattern, ignore_case):
                 matches.append(os.path.join(path, file))
