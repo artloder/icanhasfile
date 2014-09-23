@@ -28,7 +28,7 @@ setup(
     long_description=get_long_description(),
     author='Arthur Loder',
     author_email='art@artloder.com',
-    url='http://www.artloder.com/code/icanhasfile/',
+    url='http://artloder.com/code/icanhasfile/',
     license='MIT',
     include_package_data=True,
     py_modules=['icanhasfile'],
