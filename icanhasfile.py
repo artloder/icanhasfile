@@ -29,8 +29,8 @@ OPTIONS:
      --ignore-case, -i
          Perform case-insensitive matching. Defaults to case-sensitive.
 
-     --exclude-dirs <exclude_dirs>
-         Directory names to ignore in file searches.
+     --exclude-dirs <exclude_dirs>, -e <exclude_dirs>
+         Comma-delimited list of directory names to ignore in file searches.
          Defaults to $ICANHASFILE_EXCLUDE_DIRS.
 
 EXAMPLES
