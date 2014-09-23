@@ -32,7 +32,7 @@ setup(
     license='MIT',
     include_package_data=True,
     py_modules=['icanhasfile'],
-    install_requires=['docopt'],
+    install_requires=['docopt', 'scandir'],
     entry_points={
         'console_scripts': ['icanhasfile = icanhasfile:main']
     },

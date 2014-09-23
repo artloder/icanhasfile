@@ -48,6 +48,7 @@ import subprocess
 import sys
 
 import docopt
+import scandir
 
 
 __version__ = '0.1.0.dev'
@@ -72,7 +73,7 @@ def process(base_path, filepattern, command, ignore_case, exclude_dirs):
 def get_matches(base_path, filepattern, ignore_case, exclude_dirs):
     """Return a list of file Strings that match the criteria."""
     matches = []
-    for (path, dirs, files) in os.walk(base_path):
+    for (path, dirs, files) in scandir.walk(base_path):
         for dir in dirs:
             if dir in exclude_dirs:
                 dirs.remove(dir)
