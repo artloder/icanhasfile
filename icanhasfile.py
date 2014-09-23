@@ -23,24 +23,25 @@ OPTIONS:
 
      --command <command>, -c <command>
          Command to use on the file.
-         Defaults to $ICANHASFILE_COMMAND, $EDITOR, or 'cat' (in order
-         of precedence)
+         Defaults to $ICANHASFILE_COMMAND, $EDITOR, or 'cat' (in order of
+         precedence)
 
      --ignore-case, -i
          Perform case-insensitive matching. Defaults to case-sensitive.
 
      --exclude-dirs <exclude_dirs>, -e <exclude_dirs>
          Comma-delimited list of directory names to ignore in file searches.
-         Defaults to $ICANHASFILE_EXCLUDE_DIRS.
+         Defaults to $ICANHASFILE_EXCLUDE_DIRS if set.
 
 EXAMPLES
-      icanhasfile . '*.py'
+      icanhasfile '*.py'
          Open a file with a '.py' suffix under current directory
 
       icanhasfile --command cat ~/checkout/projects/service 'pom.xml'
          cat a file named 'pom.xml' in ~/checkout/projects/service
 
 """
+
 import fnmatch
 import os
 import re

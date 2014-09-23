@@ -11,7 +11,7 @@ glob searches.
 installashun
 ------------
 
-To install icanhasfile, simply:
+Run the following command to install icanhasfile:
 
 .. code-block:: bash
 
@@ -28,11 +28,15 @@ To get the help dialog, run one of the following commands:
  $ icanhasfile -h
  $ icanhasfile -?
 
-The general command syntax is below. For a list of options, see the help dialog.
+The general command syntax is below. For a list of options, see the help
+dialog. In the first form, you provide an explicit path to search; in the
+second, the search is executed in the current directory.
 
 .. code-block:: bash
 
  $ icanhasfile [options] <path> <filepattern>
+ $ icanhasfile [options] <filepattern>
+
 
 examplez
 --------
@@ -49,8 +53,8 @@ As an example, let's say we have the following directory structure:
  |
  +-- dir2/
  |   |
+ |   +-- assembly.xml
  |   +-- pom.xml
- |   +-- pom-changes.xml
  |   \-- version.txt
  |
  +-- dir3/
@@ -69,16 +73,30 @@ from three matching files:
  [2] dir2/pom.xml
  Choose a number (q to quit):
 
-If you are in the top-level directory and are searching for *pom\*.xml*, issue
-the command below. You will be prompted to choose from four matching files:
+If you are already in the top-level directory and are searching for *pom.xml*,
+issue the command below. You will be prompted to choose from three matching
+files:
 
 .. code-block:: bash
 
- $ icanhasfile . 'pom*.xml'
+ $ icanhasfile pom.xml
  [0] pom.xml
  [1] dir1/pom.xml
- [2] dir2/pom-changes.xml
+ [2] dir2/pom.xml
+ Choose a number (q to quit):
+
+If you are already in the top-level directory and are searching for *all* xml
+files, issue the command below. You will be prompted to choose from five
+matching files:
+
+.. code-block:: bash
+
+ $ icanhasfile '*.xml'
+ [0] pom.xml
+ [1] dir1/pom.xml
+ [2] dir2/assembly.xml
  [3] dir2/pom.xml
+ [4] dir3/context.xml
  Choose a number (q to quit):
 
 By default, the selected file will be opened using your $EDITOR. However, you
