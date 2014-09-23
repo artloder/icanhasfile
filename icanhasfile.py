@@ -6,6 +6,7 @@ NAME:
 
 USAGE:
      icanhasfile [options] <path> <filepattern>
+     icanhasfile [options] <filepattern>
      icanhasfile --help
      icanhasfile --version
 
@@ -147,7 +148,7 @@ def main():
     """Parse the arguments and execute the main flow."""
     args = docopt.docopt(__doc__, version='icanhasfile ' + __version__)
     process(
-        args['<path>'],
+        get_value(args['<path>'], None, '.'),
         args['<filepattern>'],
         get_value(
             args['--command'], ['ICANHASFILE_COMMAND', 'EDITOR'], 'cat'),
