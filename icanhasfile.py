@@ -52,7 +52,7 @@ import docopt
 import scandir
 
 
-__version__ = '0.1.0.dev'
+__version__ = '0.1.0'
 
 
 def process(base_path, filepattern, command, ignore_case, exclude_dirs):
